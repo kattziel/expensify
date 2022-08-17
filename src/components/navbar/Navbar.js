@@ -15,14 +15,12 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <ul>
         <li className={styles.title}>Expensify</li>
-
         {!user && (
           <>
             <li><Link to="/login">Login</Link></li>
             <li><Link to="/signup">Signup</Link></li>
           </>
         )}
-
         {user && (
           <>
             <li>hello, {user.displayName}</li>
