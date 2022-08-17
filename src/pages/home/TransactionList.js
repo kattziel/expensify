@@ -1,4 +1,5 @@
 import { useFirestore } from '../../hooks/useFirestore'
+import { Button } from '../../components/controls/Button'
 
 // styles
 import styles from './Home.module.css'
@@ -12,7 +13,7 @@ export default function TransactionList({ transactions }) {
         <li key={transaction.id}>
           <p className={styles.name}>{transaction.name}</p>
           <p className={styles.amount}>${transaction.amount}</p>
-          <button onClick={() => deleteDocument(transaction.id)}>x</button>
+          <Button onClick={() => deleteDocument(transaction.id)}>x</Button>
         </li>
       ))}
     </ul>

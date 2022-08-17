@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { useSignup } from '../../hooks/useSignup'
 
+import { Input } from "../../components/controls/Input";
+import { Button } from "../../components/controls/Button";
+
 // styles
 import styles from './Signup.module.css'
 
@@ -20,7 +23,7 @@ export default function Signup() {
       <h2>sign up</h2>
       <label>
         <span>email:</span>
-        <input
+        <Input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
@@ -28,7 +31,7 @@ export default function Signup() {
       </label>
       <label>
         <span>password:</span>
-        <input
+        <Input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
@@ -36,14 +39,14 @@ export default function Signup() {
       </label>
       <label>
         <span>display name:</span>
-        <input
+        <Input
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />
       </label>
-      { !isPending && <button className="btn">sign up</button> }
-      { isPending && <button className="btn" disabled>loading</button> }
+      { !isPending && <Button className="btn">sign up</Button> }
+      { isPending && <Button className="btn" disabled>loading</Button> }
       { error && <p>{error}</p> }
     </form>
   )

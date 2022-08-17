@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
-import { useAuthContext } from "../hooks/useAuthContext"
-import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from "../../hooks/useAuthContext"
+import { useLogout } from '../../hooks/useLogout'
+
+import { Button } from '../controls/Button'
 
 // styles
 import styles from './Navbar.module.css'
@@ -25,7 +27,7 @@ export default function Navbar() {
           <>
             <li>hello, {user.displayName}</li>
             <li>
-              <button className="btn" onClick={logout}>Logout</button>
+              <Button className="btn" onClick={logout}>Logout</Button>
             </li>
           </>
         )}

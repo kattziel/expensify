@@ -1,9 +1,10 @@
-
-
 import { useState, useEffect } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
 
-export default function TransactionForm({ uid }) {
+import { Input } from '../../components/controls/Input'
+import { Button } from '../../components/controls/Button'
+
+export default function TransactionForm({uid}) {
   const [name, setName] = useState('')
   const [amount, setAmount] = useState('')
   const { addDocument, response } = useFirestore('transactions')
@@ -17,7 +18,6 @@ export default function TransactionForm({ uid }) {
     })
   }
 
-  // reset the form fields
   useEffect(() => {
     if (response.success) {
       setName('')
@@ -31,7 +31,7 @@ export default function TransactionForm({ uid }) {
       <form onSubmit={handleSubmit}>
         <label>
           <span>Transaction name:</span>
-          <input
+          <Input
             type="text"
             required
             onChange={(e) => setName(e.target.value)}
@@ -40,14 +40,14 @@ export default function TransactionForm({ uid }) {
         </label>
         <label>
           <span>Amount ($):</span>
-          <input
+          <Input
             type="number"
             required
             onChange={(e) => setAmount(e.target.value)}
             value={amount}
           />
         </label>
-        <button>Add Transaction</button>
+        <Button>Add Transaction</Button>
       </form>
     </>
   )

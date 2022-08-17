@@ -1,14 +1,19 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 // pages & components
-import Home from './pages/home/Home'
-import Login from './pages/login/Login'
-import Signup from './pages/signup/Signup'
-import Navbar from './components/Navbar'
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
-  const { authIsReady, user } = useAuthContext()
+  // deklaracje dwoch zmiennych za pomocą destrukturyzacji
+  // const data = useAuthContext()
+  // const user = data.user
+  // const authIsReady = data.user
+
+  const { authIsReady, user } = useAuthContext();
 
   return (
     <div className="App">
@@ -17,12 +22,10 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/">
-              {!user && <Redirect to="/login" />}
-              {user && <Home />}
+              {user ? <Home /> : <Redirect to="/login" />}
             </Route>
             <Route path="/login">
-              {user && <Redirect to="/" />}
-              {!user && <Login />}
+              {user ? <Redirect to="/" /> : <Login />}
             </Route>
             <Route path="/signup">
               {user && user.displayName && <Redirect to="/" />}
@@ -35,4 +38,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
