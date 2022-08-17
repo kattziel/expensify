@@ -2,7 +2,7 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 import { useCollection } from '../../hooks/useCollection'
 
 // styles
-import styles from './Home.module.css'
+import styles from './Home.module.scss'
 
 // components
 import TransactionForm from './TransactionForm'

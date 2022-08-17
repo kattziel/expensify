@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { AuthContextProvider } from "./context/AuthContext";
 
-import "./index.css";
+import "./index.scss";
 
 // Renderowanie aplikacji
 

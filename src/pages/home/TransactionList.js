@@ -2,7 +2,7 @@ import { useFirestore } from '../../hooks/useFirestore'
 import { Button } from '../../components/controls/Button'
 
 // styles
-import styles from './Home.module.css'
+import styles from './Home.module.scss'
 
 export default function TransactionList({ transactions }) {
   const { deleteDocument } = useFirestore('transactions')

@@ -5,7 +5,7 @@ import { useLogout } from '../../hooks/useLogout'
 import { Button } from '../controls/Button'
 
 // styles
-import styles from './Navbar.module.css'
+import styles from './Navbar.module.scss'
 
 export default function Navbar() {
   const { logout } = useLogout()

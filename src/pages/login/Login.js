@@ -5,7 +5,7 @@ import { Button } from "../../components/controls/Button";
 
 
 // styles
-import styles from "./Login.module.css";
+import styles from "./Login.module.scss";
 
 export default function Login() {
   const [email, setEmail] = useState("");
