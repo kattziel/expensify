@@ -1,6 +1,5 @@
 {
   "name": "expensify",
-  "homepage": "https://kattziel.github.io/Expensify",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
