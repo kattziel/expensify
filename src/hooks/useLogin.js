@@ -8,17 +8,13 @@ export const useLogin = () => {
   const [isPending, setIsPending] = useState(false)
   const { dispatch } = useAuthContext()
 
-  // login jest fukcją asynchroniczna ktora przy await - czeka az server zwroci dane do fukcji
   const login = async (email, password) => {
     setError(null)
     setIsPending(true)
 
     try {
-      // login;
-      // czekamy na odpowiedz z serwera - i albo przejdziemy dalej jesli nie ma bledu - albo trafimy do catch
       const res = await projectAuth.signInWithEmailAndPassword(email, password)
-      // jesli zapytanie zwroci bląd kod przejdzie do catch w przeciwnym razie wykona 22 do 27
-      
+
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
 

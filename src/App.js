@@ -8,10 +8,6 @@ import Signup from "./pages/signup/Signup";
 import Navbar from "./components/navbar/Navbar";
 
 function App() {
-  // deklaracje dwoch zmiennych za pomocą destrukturyzacji
-  // const data = useAuthContext()
-  // const user = data.user
-  // const authIsReady = data.user
 
   const { authIsReady, user } = useAuthContext();
 

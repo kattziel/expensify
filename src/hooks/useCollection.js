@@ -12,11 +12,9 @@ export const useCollection = (collection, _query, _orderBy) => {
     let ref = projectFirestore.collection(collection)
 
     if (query) {
-      // filter transakcji konkretnego uzytkownika
       ref = ref.where(...query)
     }
     if (orderBy) {
-      // w jaki sposób maja byc transakcje posortowane
       ref = ref.orderBy(...orderBy)
     }
 
