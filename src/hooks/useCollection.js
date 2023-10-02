@@ -17,7 +17,7 @@ export const useCollection = (collection, _query, _orderBy) => {
     if (orderBy) {
       ref = ref.orderBy(...orderBy)
     }
-
+    // if there is an query / orderBy attribute (passed as a prop to useCollection hook), we are firing where / order by function, that takes arguments that are passed to the hook
     const unsubscribe = ref.onSnapshot(snapshot => {
       let results = []
       snapshot.docs.forEach(doc => {

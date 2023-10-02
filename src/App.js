@@ -10,6 +10,14 @@ import Navbar from "./components/navbar/Navbar";
 function App() {
 
   const { authIsReady, user } = useAuthContext();
+  // from there:
+  // export const AuthContextProvider = ({ children }) => {
+  //   const [state, dispatch] = useReducer(authReducer, {
+  //     user: null,
+  //     authIsReady: false
+  //   })
+  // this state changes when particular actions are dispatched
+  // hence changes in the state = route guarding = conditional rendering
 
   return (
     <div className="App">
